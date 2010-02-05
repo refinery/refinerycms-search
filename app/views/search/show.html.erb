@@ -1,0 +1,36 @@
+<% content_for :body_content_page_title do %>
+  Search Results for '<%=h params[:query] %>'
+<% end %>
+
+<% content_for :body_content_left do %>
+  <ul id="search_results">
+    <% @results.each do |result| %>
+      <li>
+        <span class='result_type'>
+          <%= result.class.to_s.titleize %>
+        </span>
+        <%= link_to result.title, result_url(result) %>
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
+
+<style type='text/css'>
+  #search_results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #search_results li {
+    border-bottom: 1px solid #CCC;
+  }
+
+  #search_results li span.result_type {
+    float: right;
+    color: #CCC;
+  }
+</style>
