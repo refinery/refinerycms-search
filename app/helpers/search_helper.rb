@@ -7,6 +7,8 @@ module SearchHelper
 		case table_name
 		when "news_items"
 			"/news/#{result.to_param}"
+		when "pages"
+		  result.url
 		else
 			"/#{table_name}/#{result.to_param}"
 		end
