@@ -25,6 +25,6 @@ Simply add any additional models you wish to search to this array.  For example,
 
 Any model you wish to search will need to be indexed using acts as indexed. To add indexing, simple add
 
-    acts_as_indexed :fields => [:title, :body], :index_file => [Rails.root.to_s, "tmp", "index"]
+    acts_as_indexed :fields => [:title, :body]
 
 to the model. Obviously, replaced the indexed fields with those appropriate for your model.  The above line will add indexing to PortfolioEntry in the portfolio plugin, which does not come indexed.
