@@ -12,7 +12,7 @@ class SearchEngine
 			# over multiple plugins that are registered with Refinery to do so
 			# rather than hardcoding it
 			[Page, NewsItem].each do |model|
-				results << model.find_with_index(query, :limit => RESULTS_LIMIT)
+				results << model.with_query(query).find(:all, :limit => RESULTS_LIMIT)
 			end
 			
 			results.flatten[0..(RESULTS_LIMIT - 1)]
