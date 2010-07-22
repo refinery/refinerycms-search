@@ -1,5 +1,6 @@
 <% form_tag search_url do -%>
   <%= text_field_tag :query, {}, {:type => "search",
-                     :placeholder => (params[:query] || "Search site for...")} %>
+                     :placeholder => "Search site for...", 
+                     :value => (params[:query] if params[:query])} %>
   <%= submit_tag 'Go' %>
 <% end %>
