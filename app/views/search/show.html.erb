@@ -17,20 +17,21 @@
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
+<% content_for :head do %>
+  <style type='text/css'>
+    #search_results {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-<style type='text/css'>
-  #search_results {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    #search_results li {
+      border-bottom: 1px solid #CCC;
+    }
 
-  #search_results li {
-    border-bottom: 1px solid #CCC;
-  }
-
-  #search_results li span.result_type {
-    float: right;
-    color: #CCC;
-  }
-</style>
+    #search_results li span.result_type {
+      float: right;
+      color: #CCC;
+    }
+  </style>
+<% end %>
