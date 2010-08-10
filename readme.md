@@ -17,13 +17,13 @@ A sample search form can be found in views/shared/_search.html.erb .  You can ei
 
 ## Searching in plugins
 
-The default installation will search in Pages and NewsItems.  If you wish to find results in other plugins you have created or installed, you'll need to modify the SearchEngine model.  On line 14, you'll find an array of models to search:
+The default installation will search in Pages.  If you wish to find results in other plugins you have created or installed, you can specify these in 'config/settings.rb' like so:
 
-    [Page, NewsItem].each do |model|
+    Refinery.searchable_models = [Page]
 
 Simply add any additional models you wish to search to this array.  For example, if you have the [portfolio plugin](http://github.com/resolve/refinerycms-portfolio) installed:
 
-    [Page, NewsItem, PortfolioEntry].each do |model|
+    Refinery.searchable_models = [Page, PortfolioEntry]
 
 Any model you wish to search will need to be indexed using acts as indexed. To add indexing, simple add
 
@@ -34,3 +34,5 @@ If your model doesn't use a :title attribute, remember to use an alias_attribute
     alias_attribute :title, :name #for example
 
 to the model. Obviously, replaced the indexed fields with those appropriate for your model.  The above line will add indexing to PortfolioEntry in the portfolio plugin, which does not come indexed.
+
+If you wish to override the url used in the search results, add a 'url' method to your model, and the result of this method will be used instead.
