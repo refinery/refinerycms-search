@@ -8,10 +8,7 @@ class SearchEngine
 		if query.present?
 			results = []
 			
-			# TODO need to come up with something clever here to allow it to search
-			# over multiple plugins that are registered with Refinery to do so
-			# rather than hardcoding it
-			[Page, NewsItem].each do |model|
+			Refinery.searchable_models.each do |model|
 				results << model.with_query(query).find(:all, :limit => RESULTS_LIMIT)
 			end
 			
