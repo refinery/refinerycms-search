@@ -1,0 +1,5 @@
+en:
+  plugins:
+    refinerycms_search:
+      title: Search
+      description: Extra search handling for Refinery CMS

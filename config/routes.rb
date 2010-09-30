@@ -1,7 +1,5 @@
-ActionController::Routing::Routes.draw do |map|
-	
-  map.search "/search", :controller => 'search', :action => 'show'
+Refinery::Application.routes.draw do
 
-	map.resource :search_result, :controller => 'search'
-	
+  match "/search", :to => 'search#show', :as => 'search'
+
 end
