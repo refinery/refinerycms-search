@@ -9,7 +9,7 @@
         <span class='result_type'>
           <%= result.class.to_s.titleize %>
         </span>
-        <%= link_to result.title.gsub(/(#{params[:query]})/i,'<strong>\1</strong>'), result_url(result) %>
+        <%= link_to raw(result.title.gsub(/(#{params[:query]})/i,'<mark>\1</mark>')), result_url(result) %>
       </li>
     <% end %>
   </ul>
