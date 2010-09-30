@@ -8,7 +8,7 @@ class SearchEngine
 		if query.present?
 			results = []
 			
-			Refinery.searchable_models.each do |model|
+			[Page].each do |model|
 				results << model.with_query(query).find(:all, :limit => RESULTS_LIMIT)
 			end
 			
