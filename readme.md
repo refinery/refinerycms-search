@@ -41,13 +41,13 @@ If your model doesn't use a ``:title`` attribute, remember to add an ``alias_att
 
 You can use any public method, as well. So if you have ``:first_name`` and ``:last_name`` but a method like ``name`` to join them, it can be indexed.
   
-  acts_as_indexed :fields => [:name, :biography]
+    acts_as_indexed :fields => [:name, :biography]
   
-  #...
+    #...
   
-  def name
-    (first_name, last_name).compact.join(' ')
-  end
+    def name
+      (first_name, last_name).compact.join(' ')
+    end
 
 You will need to replace the indexed fields with those appropriate for your model.
 
