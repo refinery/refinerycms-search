@@ -13,7 +13,7 @@ You'll also need to create a page (from the 'Pages' tab) with a custom URL of '/
 You can set a custom URL for a page in the Advanced Options.
 It's probably also a good idea to uncheck the 'show in menu' option for this page.
 
-Remember to restart your web server.
+## Restart your web server and RE-SAVE all the freshly indexed records.
 
 A sample search form can be found in [views/shared/_search.html.erb](http://github.com/blob/master/app/views/shared/_search.html.erb).
 You can either use this partial directly, or copy the appropriate parts.
@@ -29,15 +29,27 @@ Simply add any additional models you wish to search to this array.  For example,
 
     Refinery.searchable_models = [Page, PortfolioEntry]
 
+The above line will add indexing to PortfolioEntry in the portfolio plugin, which does not come indexed.
+
 Any model you wish to search will need to be indexed using acts as indexed. To add indexing, simple add:
 
     acts_as_indexed :fields => [:title, :body]
 
-If your model doesn't use a ``:title attribute``, remember to add an ``alias_attribute``:
+If your model doesn't use a ``:title`` attribute, remember to add an ``alias_attribute``:
 
     alias_attribute :title, :name #for example
 
+You can use any public method, as well. So if you have ``:first_name`` and ``:last_name`` but a method like ``name`` to join them, it can be indexed.
+  
+  acts_as_indexed :fields => [:name, :biography]
+  
+  #...
+  
+  def name
+    (first_name, last_name).compact.join(' ')
+  end
+
 You will need to replace the indexed fields with those appropriate for your model.
-The above line will add indexing to PortfolioEntry in the portfolio plugin, which does not come indexed.
+
 
 If you wish to override the url used in the search results just add a ``url`` method to your model and the result of this method will be used instead.
