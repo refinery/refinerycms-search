@@ -3,6 +3,8 @@
 
 By: [Resolve Digital](http://www.resolvedigital.com)
 
+Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) - Check his readme and documentation for more info on how it works.
+
 ## Installation
 
 Simply use this by adding the following to your ``Gemfile``:
