@@ -17,7 +17,7 @@ It's probably also a good idea to uncheck the 'show in menu' option for this pag
 
 ## Restart your web server and RE-SAVE all the freshly indexed records.
 
-A sample search form can be found in [views/shared/_search.html.erb](http://github.com/blob/master/app/views/shared/_search.html.erb).
+A sample search form can be found in [views/shared/_search.html.erb](http://github.com/resolve/refinerycms-search/blob/master/app/views/shared/_search.html.erb).
 You can either use this partial directly, or copy the appropriate parts.
 
 ## Searching
