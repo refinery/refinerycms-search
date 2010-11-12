@@ -22,14 +22,18 @@ You can either use this partial directly, or copy the appropriate parts.
 
 ## Searching
 
-The default installation will search in Pages.  
-If you wish to find results in other plugins you have created or installed, you can specify these in ``config/settings.rb`` like so:
+The default installation will search in Pages.
+If you wish to find results in other plugins you have created or installed, you can specify these in ``config/application.rb`` like so:
 
-    Refinery.searchable_models = [Page]
+    config.to_prepare do
+      Refinery.searchable_models = [Page]
+    end
 
 Simply add any additional models you wish to search to this array.  For example, if you have the [portfolio plugin](http://github.com/resolve/refinerycms-portfolio) installed:
 
-    Refinery.searchable_models = [Page, PortfolioEntry]
+    config.to_prepare do
+      Refinery.searchable_models = [Page, PortfolioEntry]
+    end
 
 The above line will add indexing to PortfolioEntry in the portfolio plugin, which does not come indexed.
 
@@ -42,11 +46,11 @@ If your model doesn't use a ``:title`` attribute, remember to add an ``alias_att
     alias_attribute :title, :name #for example
 
 You can use any public method, as well. So if you have ``:first_name`` and ``:last_name`` but a method like ``name`` to join them, it can be indexed.
-  
+
     acts_as_indexed :fields => [:name, :biography]
-  
+
     #...
-  
+
     def name
       (first_name, last_name).compact.join(' ')
     end
