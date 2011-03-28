@@ -12,10 +12,10 @@ Simply use this by adding the following to your ``Gemfile``:
     gem 'refinerycms-search', '~> 0.9.8'
 
 You'll also need to create a page (from the 'Pages' tab) with a custom URL of '/search'.
-You can set a custom URL for a page in the Advanced Options.
+You can set a custom URL for a page in the Advanced Options via the "Forward this page to another website or page" option.
 It's probably also a good idea to uncheck the 'show in menu' option for this page.
 
-## Restart your web server and RE-SAVE all the freshly indexed records.
+## Restart your web server and RE-SAVE all records that have not been indexed before.
 
 A sample search form can be found in [views/shared/_search.html.erb](http://github.com/resolve/refinerycms-search/blob/master/app/views/shared/_search.html.erb).
 You can either use this partial directly, or copy the appropriate parts.
