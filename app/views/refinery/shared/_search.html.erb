@@ -1,4 +1,4 @@
-<% form_tag search_url do -%>
+<%= form_tag main_app.search_path do -%>
   <%= text_field_tag :query, {}, {:type => "search",
                      :placeholder => "Search site for...", 
                      :value => (params[:query] if params[:query])} %>
