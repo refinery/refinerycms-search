@@ -1,5 +1,9 @@
 en:
-  plugins:
-    refinerycms_search:
-      title: Search
-      description: Extra search handling for Refinery CMS
+  refinery:
+    plugins:
+      refinerycms_search:
+        title: Search
+        description: Extra search handling for Refinery CMS
+    search:
+      show:
+        search_results_for: Search Results for '%{what}'

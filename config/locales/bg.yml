@@ -1,5 +1,6 @@
 bg:
-  plugins:
-    refinerycms_search:
-      title: Търсене
-      description: Допълнителна функционалност при търсене за Refinery CMS
+  refinery:
+    plugins:
+      refinerycms_search:
+        title: Търсене
+        description: Допълнителна функционалност при търсене за Refinery CMS

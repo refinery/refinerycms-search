@@ -1,5 +1,3 @@
-require 'refinery'
-
 module Refinery
   module Search
     class Engine < Rails::Engine
@@ -9,7 +7,7 @@ module Refinery
             attr_accessor :searchable_models
 
             def searchable_models
-              @searchable_models ||= [Page]
+              @searchable_models ||= [Refinery::Page]
             end
           end
         end
@@ -18,7 +16,7 @@ module Refinery
       config.after_initialize do
         ::Refinery::Plugin.register do |plugin|
           plugin.name = 'refinerycms_search'
-          plugin.version = 1.0
+          plugin.version = 2.0
           plugin.hide_from_menu = true
         end
       end

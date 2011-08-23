@@ -1,5 +1,5 @@
 <% content_for :body_content_title do %>
-  Search Results for '<%=h params[:query] %>'
+  <%= t('.search_results_for', :what => params[:query]) %>
 <% end %>
 
 <% content_for :body_content_left do %>
@@ -16,7 +16,7 @@
 
 <% end %>
 
-<%= render :partial => "/shared/content_page" %>
+<%= render :partial => "/refinery/content_page" %>
 <% content_for :head do %>
   <style type='text/css'>
     #search_results {
