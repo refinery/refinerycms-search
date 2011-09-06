@@ -18,7 +18,7 @@ module Refinery
       config.after_initialize do
         ::Refinery::Plugin.register do |plugin|
           plugin.name = 'refinerycms_search'
-          plugin.version = 1.0
+          plugin.version = 1.1
           plugin.hide_from_menu = true
         end
       end
