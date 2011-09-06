@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-search}
-  s.version           = %q{0.9.8}
+  s.version           = %q{1.0.0}
   s.date              = %q{2010-10-01}
   s.summary           = %q{Extra search handling for Refinery CMS}
   s.description       = %q{Provides extra functionality for searching your frontend website using Refinery CMS.}
@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors           = ["Resolve Digital"]
   s.require_paths     = %w(lib)
 
-  s.add_dependency    'refinerycms', '>= 0.9.8'
+  s.add_dependency    'refinerycms', '>= 1.0.0'
 
   s.files             = [
     'app',

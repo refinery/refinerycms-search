@@ -9,11 +9,11 @@ Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) - Check 
 
 Simply use this by adding the following to your ``Gemfile``:
 
-    gem 'refinerycms-search', '~> 0.9.8'
-
-You'll also need to create a page (from the 'Pages' tab) with a custom URL of '/search'.
-You can set a custom URL for a page in the Advanced Options via the "Forward this page to another website or page" option.
-It's probably also a good idea to uncheck the 'show in menu' option for this page.
+    gem 'refinerycms-search', '~> 1.0.0'
+    
+    bundle install
+    rails g refinerycms_search
+    rake db:migrate
 
 ## Restart your web server and RE-SAVE all records that have not been indexed before.
 
