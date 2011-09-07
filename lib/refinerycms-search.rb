@@ -1,3 +1,5 @@
+require File.expand_path('../generators/search_generator', __FILE__)
+
 module Refinery
   module Search
     class Engine < Rails::Engine
