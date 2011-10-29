@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-search}
   s.version           = %q{1.0.0}
-  s.date              = %q{2010-10-01}
+  s.date              = %q{2011-10-29}
   s.summary           = %q{Extra search handling for Refinery CMS}
   s.description       = %q{Provides extra functionality for searching your frontend website using Refinery CMS.}
   s.homepage          = %q{http://refinerycms.com}
@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors           = ["Resolve Digital"]
   s.require_paths     = %w(lib)
 
-  s.add_dependency    'refinerycms', '>= 1.0.0'
+  s.add_dependency    'refinerycms-core', '>= 1.0.0'
 
   s.files             = [
     'app',
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     'app/views/shared/_search.html.erb',
     'config',
     'config/locales',
+    'config/locales/bg.yml',
     'config/locales/en.yml',
     'config/routes.rb',
     'db',
@@ -35,6 +36,7 @@ Gem::Specification.new do |s|
     'db/seeds/refinerycms_search.rb',
     'lib',
     'lib/gemspec.rb',
+    'lib/generators',
     'lib/generators/refinerycms_search_generator.rb',
     'lib/refinerycms-search.rb',
     'readme.md',
