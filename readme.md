@@ -9,7 +9,7 @@ Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) - Check 
 
 Simply use this by adding the following to your ``Gemfile``:
 
-    gem 'refinerycms-search', '~> 1.0.0'
+    gem 'refinerycms-search', '~> 1.0.0', :git => 'git://github.com/resolve/refinerycms-search.git'
     
     bundle install
     rails g refinerycms_search
