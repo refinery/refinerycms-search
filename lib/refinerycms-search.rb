@@ -9,7 +9,7 @@ module Refinery
             attr_accessor :searchable_models
 
             def searchable_models
-              @searchable_models ||= [Refinery::Page]
+              @searchable_models ||= [(::Refinery::Page if defined?(::Refinery::Page))]
             end
           end
         end
