@@ -1,6 +1,6 @@
-require File.expand_path('../generators/search_generator', __FILE__)
-
 module Refinery
+  autoload :SearchGenerator, File.expand_path('../generators/search_generator', __FILE__)
+
   module Search
     class Engine < Rails::Engine
       config.to_prepare do
