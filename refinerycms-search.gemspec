@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-search}
   s.version           = %q{2.0.0}
-  s.date              = %q{2011-10-29}
+  s.date              = %q{2011-10-31}
   s.summary           = %q{Extra search handling for Refinery CMS}
   s.description       = %q{Provides extra functionality for searching your frontend website using Refinery CMS.}
   s.homepage          = %q{http://refinerycms.com}
@@ -41,7 +41,8 @@ Gem::Specification.new do |s|
     'lib',
     'lib/gemspec.rb',
     'lib/generators',
-    'lib/generators/search_generator.rb',
+    'lib/generators/refinery',
+    'lib/generators/refinery/search_generator.rb',
     'lib/refinerycms-search.rb',
     'readme.md',
     'refinerycms-search.gemspec'
