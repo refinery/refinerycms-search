@@ -9,7 +9,7 @@ end
 
 if defined?(::Page)
   unless Page.where(:menu_match => "^/search.*$").any?
-    page = Page.create(
+    page = Page.create!(
       :title => "Search Results",
       :show_in_menu => false,
       :link_url => "/search",
