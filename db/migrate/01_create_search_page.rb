@@ -1,7 +1,6 @@
 class CreateSearchPage < ActiveRecord::Migration
 
   def up
-    load(Rails.root.join('db', 'seeds', 'refinerycms_search.rb'))
   end
 
   def down
@@ -12,7 +11,6 @@ class CreateSearchPage < ActiveRecord::Migration
     if defined?(Refinery::Page)
       Refinery::Page.delete_all({:link_url => "/search"})
     end
-
   end
 
 end

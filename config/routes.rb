@@ -1,5 +1,3 @@
-Rails.application.routes.draw do
-  scope(:module => :refinery) do
-    match "/search", :to => 'search#show', :as => 'search'
-  end
+Refinery::Core::Engine.routes.draw do
+  match "/search", :to => 'search#show', :as => 'search'
 end
