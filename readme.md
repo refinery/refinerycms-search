@@ -13,7 +13,7 @@ Simply use this by adding the following to your ``Gemfile``:
 
 ## RE-SAVE all records that have not been indexed before.
 
-A sample search form can be found in [views/refineyr/shared/_search.html.erb](http://github.com/resolve/refinerycms-search/blob/master/app/views/refinery/shared/_search.html.erb).
+A sample search form can be found in [views/refinery/shared/_search.html.erb](http://github.com/resolve/refinerycms-search/blob/master/app/views/refinery/shared/_search.html.erb).
 You can either use this partial directly, or copy the appropriate parts.
 
 ## Searching
