@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# Encoding: UTF-8
 version = '1.0.0'
 raise "Could not get version so gemspec can not be built" if version.nil?
 files = Dir.glob("**/*").flatten.reject do |file|
@@ -6,6 +7,7 @@ files = Dir.glob("**/*").flatten.reject do |file|
 end
 
 gemspec = <<EOF
+# Encoding: UTF-8
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-search}
   s.version           = %q{#{version}}
@@ -14,10 +16,10 @@ Gem::Specification.new do |s|
   s.description       = %q{Provides extra functionality for searching your frontend website using Refinery CMS.}
   s.homepage          = %q{http://refinerycms.com}
   s.email             = %q{info@refinerycms.com}
-  s.authors           = ["Resolve Digital"]
+  s.authors           = ["Uģis Ozols", "Joe Sak", "Philip Arndt"]
   s.require_paths     = %w(lib)
 
-  s.add_dependency    'refinerycms-core', '>= 1.0.0'
+  s.add_dependency    'refinerycms-core', '~> 1.0'
 
   s.files             = [
     '#{files.join("',\n    '")}'
