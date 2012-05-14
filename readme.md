@@ -1,9 +1,7 @@
-# Search plugin for [RefineryCMS](http://www.refinerycms.com)
-[Github](http://github.com/resolve/refinerycms)
+# Search plugin for [Refinery CMS](http://www.refinerycms.com)
 
-By: [Resolve Digital](http://www.resolvedigital.com)
-
-Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) - Check his readme and documentation for more info on how it works.
+Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) - 
+Check his readme and documentation for more info on how it works.
 
 ## Installation
 
