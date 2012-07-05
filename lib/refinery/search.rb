@@ -1,7 +1,7 @@
 require "refinerycms-core"
 
 module Refinery
-  autoload :SearchGenerator, File.expand_path('../generators/refinery/search_generator', __FILE__)
+  autoload :SearchGenerator, 'generators/refinery/search_generator'
 
   module Search
     require "refinery/search/engine"

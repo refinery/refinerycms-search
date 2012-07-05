@@ -3,6 +3,9 @@ module Refinery
     class Engine < Rails::Engine
       include Refinery::Engine
 
+      isolate_namespace Refinery
+      engine_name :refinery_search
+
       initializer "register refinery_search plugin" do
         Refinery::Plugin.register do |plugin|
           plugin.name = 'refinery_search'
