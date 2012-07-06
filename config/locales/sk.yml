@@ -1,0 +1,10 @@
+sk:
+  refinery:
+    plugins:
+      refinerycms_search:
+        title: Hľadať
+        description: Extra spôsob vyhľadávania pre Refinery CMS
+    search:
+      show:
+        search_results_for: Výsledok vyhľadávania pre '%{what}'
+
