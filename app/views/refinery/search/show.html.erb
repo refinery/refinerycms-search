@@ -2,7 +2,7 @@
   <%= t('.search_results_for', :what => params[:query]) %>
 <% end %>
 
-<% content_for :body_content_left do %>
+<% content_for :body do %>
   <ul id="search_results">
     <% @results.each do |result| %>
       <li>
@@ -16,4 +16,4 @@
 
 <% end %>
 
-<%= render :partial => "/refinery/content_page" %>
+<%= render "/refinery/content_page" %>
