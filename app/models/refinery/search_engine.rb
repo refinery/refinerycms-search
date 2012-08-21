@@ -10,8 +10,6 @@ module Refinery
       results = []
       offset = page.to_i*per
 
-      Rails.logger.info "offset #{offset},  page #{page}, per #{per}"
-
       Refinery.searchable_models.each do |model|
         results << model.with_query(query)
       end if query.present?
@@ -21,8 +19,6 @@ module Refinery
       finish = start + per-1
       results = results.flatten[start..(finish)]
       pages = (count.to_f/per.to_f).ceil
-
-      Rails.logger.info "count #{count}, offset #{offset},  pages #{pages}, per #{per}"
 
       results = { results: results, count: count, pages: pages, per:  per }
     end
