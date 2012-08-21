@@ -1,19 +1,24 @@
+
 <% content_for :body_content_title do %>
   <%= t('.search_results_for', :what => params[:query]) %>
 <% end %>
 
 <% content_for :body_content_left do %>
-  <ul id="search_results">
-    <% @results.each do |result| %>
-      <li>
-        <span class='result_type'>
-          <%= result_type result %>
-        </span>
-        <%= link_to result_title(result).html_safe, result_url(result) %>
-      </li>
-    <% end %>
-  </ul>
-
+<section id="search_results">
+    <header><h1><%= @count %> Results for '<%=h params[:query] %>'</h1></header>
+    <ul>
+        <% @results.each do |result| %>
+            <li <%= "class='last'" if result == @results.last %>>
+                <span class='result_type'><%= result_type result %></span>
+                <%= link_to result_title(result).html_safe, result_url(result) %>
+            </li>
+        <% end if @results%>
+    </ul>
+    <div class='pagination'>
+        <%= link_to "Previous", search_url(:query => params[:query], :page => (@page_number-1)) unless @page_number ==  nil || @page_number < 2 %>
+        <%= link_to "Next", search_url(:query => params[:query], :page => (@page_number > 1 ? @page_number+1 : 2)) unless @page_number >= @search[:pages].to_i %>
+    </div>
+</section>
 <% end %>
 
 <%= render :partial => "/refinery/content_page" %>
