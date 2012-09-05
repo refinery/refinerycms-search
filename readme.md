@@ -8,7 +8,7 @@ Check his readme and documentation for more info on how it works.
 Simply use this by adding the following to your `Gemfile`:
 
 ```ruby
-gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/resolve/refinerycms-search.git', :branch => '2-0-stable'
+gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/refinery/refinerycms-search.git', :branch => '2-0-stable'
 ```
 
 ## RE-SAVE all records that have not been indexed before.
