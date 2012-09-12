@@ -7,9 +7,9 @@
     <% @results.each do |result| %>
       <li>
         <span class='result_type'>
-          <%= result.class.to_s.titleize %>
+          <%= result_type result %>
         </span>
-        <%= link_to raw(result.title.gsub(/(#{Regexp.escape(params[:query])})/i, '<mark>\1</mark>')), result_url(result) %>
+        <%= link_to result_title(result).html_safe, result_url(result) %>
       </li>
     <% end %>
   </ul>
