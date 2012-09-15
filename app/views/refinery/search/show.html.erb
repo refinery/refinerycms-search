@@ -2,18 +2,21 @@
   <%= t('.search_results_for', :what => params[:query]) %>
 <% end %>
 
-<% content_for :body_content_left do %>
-  <ul id="search_results">
-    <% @results.each do |result| %>
-      <li>
-        <span class='result_type'>
-          <%= result_type result %>
-        </span>
-        <%= link_to result_title(result).html_safe, result_url(result) %>
-      </li>
+<% content_for :body do %>
+  <% if @results.empty? %>
+    <%= t('.no_results_for', :what => params[:query]) %>
+  <% else %>
+    <ul id="search_results">
+      <% @results.each do |result| %>
+        <li>
+          <span class='result_type'>
+            <%= result_type result %>
+          </span>
+          <%= link_to result_title(result).html_safe, result_url(result) %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
-
 <% end %>
 
 <%= render :partial => "/refinery/content_page" %>
