@@ -4,13 +4,17 @@
 
 <% content_for :body do %>
   <ul id="search_results">
-    <% @results.each do |result| %>
-      <li>
-        <span class='result_type'>
-          <%= result_type result %>
-        </span>
-        <%= link_to result_title(result).html_safe, result_url(result) %>
-      </li>
+    <% if @results.empty? %>
+      <%= t('.no_results_for', :what => params[:query]) %>
+    <% else %>
+      <% @results.each do |result| %>
+        <li>
+          <span class='result_type'>
+            <%= result_type result %>
+          </span>
+          <%= link_to result_title(result).html_safe, result_url(result) %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 
