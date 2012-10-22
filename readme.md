@@ -13,7 +13,7 @@ gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/refinery/refiner
 
 Now, run ``bundle install``
 
-Next, to install the blog plugin run:
+Next, to install the search plugin run:
 
     rails generate refinery:search
 
