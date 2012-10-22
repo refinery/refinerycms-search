@@ -13,6 +13,20 @@ Simply use this by adding the following to your `Gemfile`:
 gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/resolve/refinerycms-search.git', :branch => '2-0-stable'
 ```
 
+Now, run ``bundle install``
+
+Next, to install the search plugin run:
+
+    rails generate refinery:search
+
+Run database migrations:
+
+    rake db:migrate
+
+Finally seed your database and you're done.
+
+    rake db:seed
+
 ## RE-SAVE all records that have not been indexed before.
 
 A sample search form can be found in [views/refinery/shared/_search.html.erb](http://github.com/resolve/refinerycms-search/blob/master/app/views/refinery/shared/_search.html.erb).
