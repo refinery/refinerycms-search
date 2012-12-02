@@ -1,7 +1,4 @@
-# Search plugin for [RefineryCMS](http://www.refinerycms.com)
-[Github](http://github.com/resolve/refinerycms)
-
-By: [Resolve Digital](http://www.resolvedigital.com)
+# Search plugin for [Refinery CMS](http://www.refinerycms.com)
 
 Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) - Check his readme and documentation for more info on how it works.
 
@@ -10,7 +7,7 @@ Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) - Check 
 Simply use this by adding the following to your `Gemfile`:
 
 ```ruby
-gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/resolve/refinerycms-search.git', :branch => '2-0-stable'
+gem 'refinerycms-search', '~> 2.0.0'
 ```
 
 Now, run ``bundle install``
