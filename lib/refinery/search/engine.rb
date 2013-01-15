@@ -9,7 +9,6 @@ module Refinery
       initializer "register refinery_search plugin" do
         Refinery::Plugin.register do |plugin|
           plugin.name = 'refinery_search'
-          plugin.version = 2.0
           plugin.hide_from_menu = true
         end
       end
