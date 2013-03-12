@@ -3,7 +3,6 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-search}
   s.version           = %q{2.1.0.dev}
-  s.date              = Date.today.strftime("%Y-%m-%d")
   s.summary           = %q{Extra search handling for Refinery CMS}
   s.description       = %q{Provides extra functionality for searching your frontend website using Refinery CMS.}
   s.homepage          = %q{http://refinerycms.com}
