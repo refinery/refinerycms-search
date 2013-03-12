@@ -6,7 +6,7 @@ module Refinery
     end
 
     def result_type(result)
-      result.class.to_s.titleize.gsub('Refinery/', '').gsub '/', '::'
+      result.class.to_s.titleize.split("/").last
     end
 
     # this is where you register your result URLs based on the
