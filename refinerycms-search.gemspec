@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.email             = %q{info@refinerycms.com}
   s.authors           = ["Philip Arndt", "Uģis Ozols", "Joe Sak"]
   s.require_paths     = %w(lib)
+  s.license           = %q{MIT}
 
   s.files             = `git ls-files`.split("\n")
   s.test_files        = `git ls-files -- spec/*`.split("\n")

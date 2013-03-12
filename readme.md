@@ -1,6 +1,6 @@
 # Search plugin for [Refinery CMS](http://www.refinerycms.com)
 
-Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) - 
+Powered by: [acts_as_indexed](http://github.com/dougal/acts_as_indexed) -
 Check his readme and documentation for more info on how it works.
 
 ## Installation
@@ -8,7 +8,7 @@ Check his readme and documentation for more info on how it works.
 Simply use this by adding the following to your `Gemfile`:
 
 ```ruby
-gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/refinery/refinerycms-search.git', :branch => '2-0-stable'
+gem 'refinerycms-search', '~> 2.0.0'
 ```
 
 Now, run ``bundle install``
