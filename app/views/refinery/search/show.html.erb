@@ -10,11 +10,7 @@
       <% @results.each do |result| %>
         <li>
           <span class='result_type'>
-            <% if result.class.method_defined?(:friendly_search_name) %>
-              <%= result.friendly_search_name %>
-            <% else %>
-              <%= result_type result %>
-            <% end %>
+            <%= result_type result %>
           </span>
           <%= link_to result_title(result).html_safe, result_url(result) %>
         </li>
