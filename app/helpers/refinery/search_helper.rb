@@ -6,7 +6,11 @@ module Refinery
     end
 
     def result_type(result)
-      result.class.to_s.titleize.split("/").last
+      if result.class.method_defined?(:friendly_search_name)
+        result.friendly_search_name
+      else
+        result.class.to_s.titleize.split("/").last
+      end
     end
 
     # this is where you register your result URLs based on the
