@@ -1,4 +1,5 @@
 language: ruby
+cache: bundler
 before_install:
   - 'if [[ "$TRAVIS_RUBY_VERSION" =~ "jruby" ]] ; then gem update --system ; fi'
   - gem install bundler
