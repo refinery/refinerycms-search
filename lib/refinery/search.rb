@@ -1,4 +1,5 @@
 require "refinerycms-core"
+require 'refinerycms-acts-as-indexed'
 
 module Refinery
   autoload :SearchGenerator, 'generators/refinery/search_generator'

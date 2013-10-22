@@ -5,9 +5,23 @@ gemspec
 gem 'refinerycms', '~> 2.1.0'
 gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 
-group :test do
-  gem 'refinerycms-testing', :github => 'refinery/refinerycms', :branch => '2-1-stable'
-end
+group :development, :test do
+  gem 'refinerycms-testing', '~> 2.1.0'
+  gem 'poltergeist'
+
+  platforms :jruby do
+    gem 'activerecord-jdbcsqlite3-adapter'
+    gem 'activerecord-jdbcmysql-adapter'
+    gem 'activerecord-jdbcpostgresql-adapter'
+    gem 'jruby-openssl'
+  end
+
+  unless defined?(JRUBY_VERSION)
+    gem 'sqlite3'
+    gem 'mysql2'
+    gem 'pg'
+  end
+>>>>>>> Add proper dependency to refinerycms-core 2.1.0 and refinerycms-acts-as-indexed 1.0.0
 
 # Database Configuration
 unless ENV['TRAVIS']
