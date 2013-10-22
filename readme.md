@@ -78,3 +78,14 @@ end
 You will need to replace the indexed fields with those appropriate for your model.
 
 If you wish to override the url used in the search results just add a `url` method to your model and the result of this method will be used instead.
+
+## Displaying a friendlier name for your model
+
+Just define the method `friendly_search_name` to override what is displayed
+for each search result for your model as per [the implementing pull request](https://github.com/refinery/refinerycms-search/pull/38).
+
+```ruby
+def friendly_search_name
+  "Document"
+end
+```
