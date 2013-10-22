@@ -21,7 +21,7 @@ group :development, :test do
     gem 'mysql2'
     gem 'pg'
   end
->>>>>>> Add proper dependency to refinerycms-core 2.1.0 and refinerycms-acts-as-indexed 1.0.0
+end
 
 # Database Configuration
 unless ENV['TRAVIS']
