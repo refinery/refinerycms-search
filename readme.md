@@ -3,6 +3,8 @@
 Powered by: [acts_as_indexed](https://github.com/dougal/acts_as_indexed) and [refinerycms-acts-as-indexed](https://github.com/refinery/refinerycms-acts-as-indexed) -
 Check his readme and documentation for more info on how it works.
 
+[![Build Status](https://travis-ci.org/refinery/refinerycms-search.png?branch=master)](https://travis-ci.org/refinery/refinerycms-search)
+
 ## Installation
 
 Simply use this by adding the following to your `Gemfile`:
