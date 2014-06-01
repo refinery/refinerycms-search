@@ -1,0 +1,14 @@
+nb:
+  refinery:
+    plugins:
+      refinerycms_search:
+        title: Søk
+        description: Ekstra søkefunksjonalitet for Refinery CMS
+    search:
+      show:
+        search_results_for: Søkeresultat for '%{what}'
+        no_results_for: Ingen resultater funnet for '%{what}'.
+    shared:
+      search:
+        search_site_for: "Søk etter..."
+        go: "Søk"
