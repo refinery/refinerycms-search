@@ -15,8 +15,9 @@
           <%= link_to result_title(result).html_safe, result_url(result) %>
         </li>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+    <%= will_paginate @results %>
+  <% end %>
 <% end %>
 
 <%= render "/refinery/content_page" %>
