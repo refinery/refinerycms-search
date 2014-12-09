@@ -8,7 +8,7 @@ module Refinery
         # page model as default model
         let!(:page) { FactoryGirl.create(:page, :title => "testy") }
 
-        it "returns an array consisting of mathcing pages" do
+        it "returns an array consisting of matching pages" do
           result = SearchEngine.search("testy")
           result.should include(page)
         end
