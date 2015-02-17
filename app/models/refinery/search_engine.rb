@@ -5,14 +5,14 @@ module Refinery
     RESULTS_LIMIT = 10
 
     # Perform search over the specified models
-    def self.search(query, page = 1)
+    def self.search(query)
       results = []
 
       Refinery.searchable_models.each do |model|
-        results << model.limit(RESULTS_LIMIT).with_query(query)
+        results << model.with_query(query)
       end if query.present?
 
-      results.flatten[0..(RESULTS_LIMIT - 1)]
+      results.flatten
     end
 
   end

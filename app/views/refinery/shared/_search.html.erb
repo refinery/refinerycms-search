@@ -1,6 +1,6 @@
-<%= form_tag refinery.search_path do -%>
+<%= form_tag refinery.search_path, :method => 'get' do -%>
   <%= text_field_tag :query, {}, {:type => "search",
-                     :placeholder => t(".search_site_for"),
+                     :placeholder => "Search site for...", 
                      :value => (params[:query] if params[:query])} %>
-  <%= submit_tag t(".go") %>
+  <%= submit_tag 'Go', :name => nil %>
 <% end %>
