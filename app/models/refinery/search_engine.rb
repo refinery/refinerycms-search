@@ -9,7 +9,11 @@ module Refinery
       results = []
 
       Refinery.searchable_models.each do |model|
-        results << model.limit(RESULTS_LIMIT).with_query(query)
+        if model == Refinery::Page
+          results << model.where(:draft => false).limit(RESULTS_LIMIT).with_query(query)
+        else
+          results << model.limit(RESULTS_LIMIT).with_query(query)
+        end
       end if query.present?
 
       results.flatten[0..(RESULTS_LIMIT - 1)]
