@@ -1,0 +1,14 @@
+fr:
+  refinery:
+    plugins:
+      refinerycms_search:
+        title: Recherche
+        description: Moteur de recherche pour Refinery CMS.
+    search:
+      show:
+        search_results_for: Résultats de la recherche pour '%{what}'
+        no_results_for: Aucun résultat pour votre recherche '%{what}'.
+    shared:
+      search:
+        search_site_for: "Rechercher dans le site..."
+        go: "Rechercher"
