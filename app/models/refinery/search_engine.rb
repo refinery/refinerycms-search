@@ -5,7 +5,7 @@ module Refinery
     RESULTS_LIMIT = 10 unless defined? RESULTS_LIMIT
 
     # Perform search over the specified models
-    def self.search(query, page, per = RESULTS_LIMIT)
+    def self.search(query, page = 1, per = RESULTS_LIMIT)
       results = []
       offset = page.to_i*per
       
@@ -16,9 +16,9 @@ module Refinery
       count = results.flatten.count
       start = -per + offset
       finish = start + per-1
-      results = results.flatten[start..(finish)]
+      paginated_results = results.flatten[start..(finish)]
       pages = (count.to_f/per.to_f).ceil
-      results = { results: results, count: count, pages: pages, per:  per }
+      results = { results: results, :paginated_results paginated_results, count: count, pages: pages, per:  per }
     end
   end
 end
