@@ -17,6 +17,8 @@
       <% end %>
     </ul>
   <% end %>
+  <%= back_link("Back", params[:query], @page_number) %>
+  <%= forward_link("Forward", params[:query], @page_number, @search[:pages]) %>
 <% end %>
 
 <%= render "/refinery/content_page" %>
