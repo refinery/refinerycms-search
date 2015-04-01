@@ -18,7 +18,7 @@ module Refinery
       finish = start + per-1
       paginated_results = results.flatten[start..(finish)]
       pages = (count.to_f/per.to_f).ceil
-      results = { results: results, :paginated_results paginated_results, count: count, pages: pages, per:  per }
+      results = { results: results, paginated_results: paginated_results, count: count, pages: pages, per:  per }
     end
   end
 end
