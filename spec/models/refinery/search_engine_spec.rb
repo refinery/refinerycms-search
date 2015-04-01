@@ -10,14 +10,14 @@ module Refinery
 
         it "returns an array consisting of matching pages" do
           result = SearchEngine.search("testy")
-          expect(result).to include(page)
+          expect(result[:paginated_results]).to include(page)
         end
       end
 
       context "when page does not exist" do
         it "returns empty array" do
           result = SearchEngine.search("ugisozols")
-          expect(result).to be_empty
+          expect(result[:paginated_results]).to be_empty
         end
       end
     end
