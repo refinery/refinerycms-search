@@ -23,12 +23,12 @@ module Refinery
       end
     end
     
-    def previous_link(query, page_number)
-      link_to "Previous", search_url(:query => query, :page => (page_number-1)) unless page_number ==  nil || page_number < 2 
+    def back_link(query, page_number)
+      search_url(:query => query, :page => (page_number-1)) unless page_number ==  nil || page_number < 2 
     end
     
-    def next_link(query, page_number, result_count)
-      link_to "Next", search_url(:query => query, :page => (page_number > 1 ? page_number+1 : 2)) unless page_number >= result_count.to_i
+    def forward_link(query, page_number, result_count)
+      search_url(:query => query, :page => (page_number > 1 ? page_number+1 : 2)) unless page_number >= result_count.to_i
     end
     
   end
