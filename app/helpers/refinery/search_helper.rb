@@ -22,6 +22,14 @@ module Refinery
         refinery.url_for send(Refinery.route_for_model(result.class, :admin => false), result)
       end
     end
-
+    
+    def previous_link(query, page_number)
+      link_to "Previous", search_url(:query => query, :page => (page_number-1)) unless page_number ==  nil || page_number < 2 
+    end
+    
+    def next_link(query, page_number, result_count)
+      link_to "Next", search_url(:query => query, :page => (page_number > 1 ? page_number+1 : 2)) unless page_number >= result_count.to_i
+    end
+    
   end
 end
