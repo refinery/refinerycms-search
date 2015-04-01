@@ -9,14 +9,14 @@ module Refinery
         let!(:page) { FactoryGirl.create(:page, title: "testy") }
 
         it "returns an array consisting of matching pages" do
-          result = SearchEngine.search("testy")
+          result = SearchEngine.search("testy", 1)
           expect(result).to include(page)
         end
       end
 
       context "when page does not exist" do
         it "returns empty array" do
-          result = SearchEngine.search("ugisozols")
+          result = SearchEngine.search("ugisozols", 1)
           expect(result).to be_empty
         end
       end
