@@ -79,6 +79,15 @@ You will need to replace the indexed fields with those appropriate for your mode
 
 If you wish to override the url used in the search results just add a `url` method to your model and the result of this method will be used instead.
 
+## Pagination 
+
+Pagination is available by two helper methods.
+
+```ruby
+= back_link("Back", params[:query], @page_number)
+= forward_link("Forward", params[:query], @page_number, @search[:pages]) 
+```
+
 ## Displaying a friendlier name for your model
 
 Just define the method `friendly_search_name` to override what is displayed
