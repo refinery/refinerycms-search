@@ -1,0 +1,31 @@
+<% content_for :body_content_title do %>
+  <% if params[:query].present? %>
+    <%= t('.search_results_for', what: params[:query]) %>
+  <% else %>
+    <%= t('.no_results') %>
+  <% end %>
+<% end %>
+
+<% content_for :body do %>
+  <% if params[:query].present? %>
+    <% if @results.present? %>
+      <ul id="search_results">
+        <% @results.each do |result| %>
+          <li>
+            <span class='result_type'>
+              <%= result_type result %>
+            </span>
+            <%= link_to result_title(result).html_safe, result_url(result) %>
+          </li>
+        <% end %>
+      </ul>
+      <%= will_paginate @results %>
+    <% else %>
+      <%= t('.no_results') %>
+    <% end %>
+  <% else %>
+    <%= t('.no_results') %>
+  <% end %>
+<% end %>
+
+<%= render "/refinery/content_page" %>

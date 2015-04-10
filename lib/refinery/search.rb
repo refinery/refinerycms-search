@@ -1,11 +1,12 @@
-require "refinerycms-core"
+require 'refinerycms-core'
 require 'refinerycms-acts-as-indexed'
 
 module Refinery
-  autoload :SearchGenerator, 'generators/refinery/search_generator'
+  autoload :SearchGenerator, 'generators/refinery/search/search_generator'
 
   module Search
-    require "refinery/search/engine"
+    require 'refinery/search/engine'
+    require 'refinery/search/configuration'
 
     class << self
       attr_writer :root
@@ -16,4 +17,3 @@ module Refinery
     end
   end
 end
-

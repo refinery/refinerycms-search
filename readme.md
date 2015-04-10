@@ -1,14 +1,36 @@
-# Search plugin for [Refinery CMS](http://www.refinerycms.com)
+# Refinery CMS Search [![Build Status](https://travis-ci.org/refinery/refinerycms-search.svg?branch=master)](https://travis-ci.org/refinery/refinerycms-search)
+
+Simple search engine for [Refinery CMS](http://refinerycms.com).
+By default it supports search in `Refinery::Page`, and `Refinery::Blog::Post` (if installed), but it can be easily configured for other Rails models too.
+
+This version of `refinerycms-search` supports Refinery 3.x and Rails 4.1.x.
+For Refinery 2.1.x and Rails 3.x, use the [2-1-stable branch](http://github.com/refinery/refinerycms-search/tree/2-1-stable).
 
 Powered by: [acts_as_indexed](https://github.com/dougal/acts_as_indexed) and [refinerycms-acts-as-indexed](https://github.com/refinery/refinerycms-acts-as-indexed) -
 Check his readme and documentation for more info on how it works.
 
+
+### In summary you can
+
+* Search in `Refinery::Page` and `Refinery::Blog::Post` models
+* Add others models in your configuration
+* Scope search query with a special method
+* Use a custom search page URL
+* Paginate the search result
+
+What it can't do :
+* It can't search all languages in the same query: it only display the results of the current locale.
+
+## Requirements
+
+Refinery CMS version 3.0.0 or above.
+
 ## Installation
 
-Simply use this by adding the following to your `Gemfile`:
+Open up your ``Gemfile`` and at the bottom, add this line:
 
 ```ruby
-gem 'refinerycms-search', '~> 2.1.0'
+gem 'refinerycms-search', github: 'refinery/refinerycms-search', branch: 'master'
 ```
 
 Now, run ``bundle install``
@@ -25,28 +47,34 @@ Finally seed your database and you're done.
 
     rake db:seed
 
-## RE-SAVE all records that have not been indexed before.
+## Index records
+
+You will have to **RE-SAVE** all records that have not been indexed before.
+
+You can do it easily with a command like this in rails console :
+
+```ruby
+Refinery::Page.all(&:save)
+```
+
+## Search form
 
 A sample search form can be found in [views/refinery/shared/_search.html.erb](https://github.com/refinery/refinerycms-search/blob/master/app/views/refinery/shared/_search.html.erb).
 You can either use this partial directly, or copy the appropriate parts.
 
-## Searching
+## Searchable models
 
-The default installation will search in Pages.
-If you wish to find results in other plugins you have created or installed, you can specify these in `config/application.rb` like so:
+The default installation will search in `Refinery::Page` and `Refinery::Blog::Post` (if installed).
+If you wish to find results in other plugins you have created or installed, you can specify these in `config/initializers/refinery/search.rb` like so:
 
 ```ruby
-config.to_prepare do
-  Refinery.searchable_models = [Refinery::Page]
-end
+config.enable_for = ['Refinery::Page']
 ```
 
 Simply add any additional models you wish to search to this array.  For example, if you have the [portfolio plugin](http://github.com/resolve/refinerycms-portfolio) installed:
 
 ```ruby
-config.to_prepare do
-  Refinery.searchable_models = [Refinery::Page, Refinery::PortfolioEntry]
-end
+config.enable_for = ['Refinery::Page', 'Refinery::PortfolioEntry']
 ```
 
 The above line will add indexing to PortfolioEntry in the portfolio plugin, which does not come indexed.
@@ -87,5 +115,18 @@ for each search result for your model as per [the implementing pull request](htt
 ```ruby
 def friendly_search_name
   "Document"
+end
+```
+
+## Use `refinery_search_scope` on searchable models
+
+If you want to add a custom scope on a searchable model, you can use the method `refinery_search_scope` in your model.
+
+```ruby
+# app/decorators/models/refinery/page_decorator.rb
+Refinery::Page.class_eval do
+  def self.refinery_search_scope
+    live
+  end
 end
 ```

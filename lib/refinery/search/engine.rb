@@ -3,12 +3,12 @@ module Refinery
     class Engine < Rails::Engine
       include Refinery::Engine
 
-      isolate_namespace Refinery
-      engine_name :refinery_search
+      isolate_namespace Refinery::Search
 
-      initializer "register refinery_search plugin" do
+      initializer "register refinerycms_search plugin" do
         Refinery::Plugin.register do |plugin|
-          plugin.name = 'refinery_search'
+          plugin.pathname = root
+          plugin.name = 'refinerycms_search'
           plugin.hide_from_menu = true
         end
       end
@@ -19,10 +19,20 @@ module Refinery
             attr_accessor :searchable_models
 
             def searchable_models
-              @searchable_models ||= [(Refinery::Page if defined?(Refinery::Page))]
+              Refinery.deprecate("Refinery.searchable_models", when: "3.1", replacement: "Refinery::Search.enable_for")
+              Refinery::Search.enable_for
+            end
+
+            def searchable_models=(value)
+              Refinery.deprecate("Refinery.searchable_models=", when: "3.1", replacement: "Refinery::Search.enable_for")
+              Refinery::Search.enable_for = value
             end
           end
         end
+      end
+
+      config.after_initialize do
+        Refinery.register_extension(Refinery::Search)
       end
     end
   end

@@ -5,9 +5,10 @@ de:
         title: Suche
         description: Suche für das Refinery CMS
     search:
-      show:
-        search_results_for: Suchergebnisse für '%{what}'
-        no_results_for: Es konnten keine Ergebnisse für den Suchbegriff '%{what}' gefunden werden.
+      search:
+        show:
+          search_results_for: Suchergebnisse für '%{what}'
+          no_results_for: Es konnten keine Ergebnisse für den Suchbegriff '%{what}' gefunden werden.
     shared:
       search:
         search_site_for: "Durchsuche Seiten nach..."

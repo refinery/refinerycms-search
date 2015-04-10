@@ -10,6 +10,12 @@ git 'https://github.com/refinery/refinerycms', :branch => 'master' do
   end
 end
 
+group :test do
+  gem 'launchy'
+  gem 'pry'
+  gem 'poltergeist'
+end
+
 # Database Configuration
 unless ENV['TRAVIS']
   gem 'activerecord-jdbcsqlite3-adapter', '>= 1.3.0.rc1', platform: :jruby
@@ -31,18 +37,13 @@ if !ENV['TRAVIS'] || ENV['DB'] == 'postgresql'
   end
 end
 
-group :test do
-  gem 'launchy'
-  gem 'pry'
-  gem 'poltergeist'
-end
-
-
 # Refinery/rails should pull in the proper versions of these
 group :assets do
   gem 'sass-rails'
-  gem 'uglifier'
+  gem 'coffee-rails'
 end
 
-gem 'jquery-rails'
-
+# Load local gems according to Refinery developer preference.
+if File.exist? local_gemfile = File.expand_path('../.gemfile', __FILE__)
+  eval File.read(local_gemfile)
+end
