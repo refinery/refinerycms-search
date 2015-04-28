@@ -1,1 +1,1 @@
-require "refinery/search"
+require 'refinery/search'

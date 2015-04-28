@@ -1,3 +1,5 @@
 Refinery::Core::Engine.routes.draw do
-  get "/search", :to => 'search#show', :as => 'search'
+  namespace :search, path: Refinery::Search.page_url do
+    root to: 'search#show'
+  end
 end

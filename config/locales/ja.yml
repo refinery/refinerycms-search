@@ -5,6 +5,7 @@ ja:
         title: '検索'
         description: 'Refinery CMS の検索プラグイン'
     search:
-      show:
-        search_results_for: '"%{what}"の検索結果'
-        no_results_for: '"%{what}"に一致するものが見付かりませんでした。'
+      search:
+        show:
+          search_results_for: '"%{what}"の検索結果'
+          no_results_for: '"%{what}"に一致するものが見付かりませんでした。'
