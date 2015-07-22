@@ -3,7 +3,12 @@ module Refinery
     module SearchHelper
 
       def result_title(result)
-        result.title.gsub /(#{Regexp.escape(params[:query])})/i, '<mark>\1</mark>'
+        Refinery.deprecate("Refinery::Search::SearchHelper#result_title", when: "3.1", replacement: "result_mark")
+        result_mark(result.title)
+      end
+
+      def result_mark(field)
+        field.gsub /(#{Regexp.escape(params[:query])})/i, '<mark>\1</mark>'
       end
 
       def result_type(result)

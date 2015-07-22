@@ -15,7 +15,7 @@
             <span class='result_type'>
               <%= result_type result %>
             </span>
-            <%= link_to result_title(result).html_safe, result_url(result) %>
+            <%= link_to result_mark(result.title).html_safe, result_url(result) %>
           </li>
         <% end %>
       </ul>
