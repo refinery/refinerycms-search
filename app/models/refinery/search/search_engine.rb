@@ -16,7 +16,7 @@ module Refinery
           end
         end if query.present?
 
-        results.flatten
+        results.flatten.uniq
       end
 
     end
