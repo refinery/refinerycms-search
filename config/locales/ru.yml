@@ -1,0 +1,16 @@
+ru:
+  refinery:
+    plugins:
+      refinerycms_search:
+        title: Поиск
+        description: Дополнительные возможности поиска для Refinery CMS
+    search:
+      search:
+        show:
+          search_results_for: Результаты поиска для '%{what}'
+          no_results: Ничего не найдено.
+          no_results_for: Поиск не дал результатов по вашему запросу '%{what}'.
+    shared:
+      search:
+        search_site_for: "Поиск на сайте..."
+        go: "Поиск"
