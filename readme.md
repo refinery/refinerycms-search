@@ -23,7 +23,7 @@ What it can't do :
 
 ## Requirements
 
-Refinery CMS version 3.0.0 or above.
+Refinery CMS version 4.0.0 or above.
 
 ## Installation
 

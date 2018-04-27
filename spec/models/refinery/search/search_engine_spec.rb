@@ -7,7 +7,7 @@ module Refinery
         context "when page exist" do
           # we're using page factory because search engine uses
           # page model as default model
-          let!(:page) { FactoryGirl.create(:page, title: "testy") }
+          let!(:page) { FactoryBot.create(:page, title: "testy") }
 
           it "returns an array consisting of matching pages" do
             result = Refinery::Search::SearchEngine.search("testy")
