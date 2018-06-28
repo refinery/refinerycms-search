@@ -1,4 +1,4 @@
-class CreateSearchPage < ActiveRecord::Migration
+class CreateSearchPage < ActiveRecord::Migration[4.2]
 
   def up
   end

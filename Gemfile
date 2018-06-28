@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-git 'https://github.com/refinery/refinerycms', :branch => 'master' do
+git 'https://github.com/refinery/refinerycms', branch: 'master' do
   gem 'refinerycms'
 
   group :development, :test do
@@ -14,6 +14,7 @@ group :test do
   gem 'launchy'
   gem 'pry'
   gem 'poltergeist'
+  gem 'listen'
 end
 
 # Database Configuration
