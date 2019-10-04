@@ -7,7 +7,7 @@ module Refinery
       before_action :find_page
 
       def show
-        @results = Refinery::Search::SearchEngine.search(params[:query])
+        @results = Refinery::Search::SearchEngine.search(params[:query].try(:to_ascii))
         @results = @results.paginate(page: params[:page], per_page: Refinery::Search.results_per_page)
       end
 
