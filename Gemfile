@@ -10,6 +10,8 @@ git 'https://github.com/refinery/refinerycms', branch: 'master' do
   end
 end
 
+gem 'refinerycms-acts-as-indexed', git: 'https://github.com/refinery/refinerycms-acts-as-indexed', branch: 'master'
+
 group :test do
   gem 'launchy'
   gem 'pry'
